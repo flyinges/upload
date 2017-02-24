@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>paixu</title>
+</head>
+<body>
+	
+</body>
+<script>
+
+function  copy(arr){
+	var newarr=[];
+	for (var i in arr) {
+		newarr[i]=arr[i];
+	};
+	return  newarr;
+}
+	function  fast(arr,callback){
+		var newarr=copy(arr);
+		var len=newarr.length;
+		for (var i = 0; i < len; i++) {
+			for (var j = i+1; j < len; j++) {
+				if(callback(newarr[i],newarr[j])){
+					var t=newarr[i];
+					newarr[i]=newarr[j];
+					newarr[j]=t;
+				}
+		     };
+		};
+		return newarr;
+	}
+    var arr=[2,5,7,2,4];
+	console.log(fast(arr,function(a,b){
+		return a<b;
+	}))
+</script>
+</html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script>
+	window.onload=function(){
+		function selfPower(minnum,maxnum) {  
+		    var result = [];  
+		  
+		    for (var i = minnum; i < maxnum; i++) {  
+		        var a = String(i).split('');  
+		        var ms = 0;  
+		        for (var m = 0; m < a.length; m++) {  
+		            var m1 = a[m];  
+		            for (var j = 0; j < a.length - 1; j++) {  
+		                m1 = m1 * a[m];  
+		            }  
+		            ms = ms + m1;  
+		        }  
+		        if (ms == i) {  
+		            result.push(ms);
+		        }  
+		    }  
+		    return result;  
+		}  
+
+		console.log(selfPower(100,1000));
+		console.log(selfPower(100,10000));
+		console.log(selfPower(10000,100000));
+
+	}
+</script>
+<body>
+	
+</body>
+</html>
